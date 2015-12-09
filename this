@@ -1,0 +1,40 @@
+# The `this` Variable
+
+*please follow along in your console*
+
+`this` always refers to the object to which it is attached
+
+```js
+this
+```
+
+Typing `this` into the console returns the global object, because we default to the global scope.
+
+If we create a function that returns `this`,
+
+```js
+function b() {return this}
+b()
+```
+
+We can see that it still returns the global object. This is because `b` is still attached to the global scope.
+
+However, if we create an object, `z`,
+
+```js
+var z = {}
+```
+
+and then attach `b` to that object,
+
+```js
+z.b = b
+```
+
+we can see that when we execute `z.b`
+
+```js
+z.b()
+```
+
+it returns the `z` object.
